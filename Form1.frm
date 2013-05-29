@@ -19,6 +19,16 @@ Begin VB.Form Form1
       TabIndex        =   11
       Top             =   2400
       Width           =   2415
+      Begin VB.CommandButton Command1 
+         BackColor       =   &H00C0FFC0&
+         Caption         =   "Aceptar"
+         Height          =   375
+         Left            =   1440
+         Style           =   1  'Graphical
+         TabIndex        =   12
+         Top             =   3480
+         Width           =   855
+      End
    End
    Begin VB.CommandButton Command6 
       Caption         =   "Calibrar Tiempos"
@@ -315,6 +325,11 @@ Set objFile = objFSO.GetFile("C:\SumaPDF_SIZE\ROLLO963Prueba\Images\1.tif")
 Label3.Caption = Int((objFile.size) / 1000)
 Set objFile = Nothing
 Set objFSO = Nothing
+End Sub
+
+Private Sub Command6_Click()
+    Frame1.Visible = True
+    Command6.Enabled = False
 End Sub
 
 Private Sub Form_Load()
